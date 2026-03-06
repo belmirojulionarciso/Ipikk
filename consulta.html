@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+  <html lang="pt-PT">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport", initial-scale=1.0>
+      <title>Consultar Inscrição IPIKK</title>
+      <link rel="shortcut icon"href="Ícone do IPIKK~3.jpg"type="image/x-jpg"/>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+      <script src="consulta.js">
+      </script>
+      <style type="text/css">
+        html
+        {
+          min-height:100px;
+          max-height:100px;
+        }
+         body
+        {
+          background:black;
+          padding:20px;
+          padding-bottom:20px;
+          padding-top:20px;
+        }
+        body>header
+        {
+          background:white;
+          padding:5px;
+          padding-top:20px;
+          width:1250px;
+          height:600px;
+          padding-bottom:10px;
+        }
+        header>h2
+        {
+          color:black;
+          text-align:center;
+          padding-bottom:20px;
+          font-family:'Times New Roman', Times, serif;
+        }
+        a:hover
+        {
+          background-color:gray;
+        }
+       .consulta-container
+       {
+          width:1250px;
+          margin:50px auto;
+          background:white;
+            padding:30px;
+            border-radius:10px;
+            box-shadow:0 5px 15px rgba(0,0,0,0.2);
+            text-align:center;
+          }
+
+        .consulta-container h2
+        {
+          margin-bottom:20px;
+        }
+
+        input
+        {
+          width:90%;
+          padding:10px;
+          margin-bottom:15px;
+          border-radius:6px;
+          border:1px solid #ccc;
+        }
+
+        button
+        {
+          padding:10px 20px;
+          background:#003366;
+          color:white;
+          border:none;
+          border-radius:6px;
+          cursor:pointer;
+        }
+
+        button:hover
+        {
+          background:#0055aa;
+        }
+
+      .resultado-box
+      {
+        margin-top:20px;
+        padding:15px;
+        border-radius:8px;
+        background:#eef3ff;
+      }
+      .btn-pdf{
+
+background:#0066cc;
+
+color:white;
+
+border:none;
+
+padding:12px 20px;
+
+font-size:16px;
+
+border-radius:6px;
+
+cursor:pointer;
+
+margin-top:20px;
+
+}
+
+.btn-pdf:hover{
+
+background:#004999;
+
+}
+      </style>
+    </head>
+    <body>
+      <header>
+        <center><img src="Ícone do IPIKK~3.jpg"alt=""/></center>
+        <h1><center>Site de Consulta de Inscrição</center>
+        </h1>
+        <h1><center>Instituto Politécnico Industrial do Kilamba-Kiaxi "Nova Vida" N° 8056</center>
+        </h1>
+        <h2><center>Lema : Um diferencial para a sua formação</center>
+        </h2>
+      </header>
+      <br />
+      <br />
+      <div class="consulta-container">
+        <h2>Consultar Inscrição</h2>
+        <input type="text" id="numero" placeholder="Digite o número de inscrição">
+        <button onclick="consultar()">Consultar</button>
+        <br />
+        <br />
+        <div class="resultado-box">
+          <p id="resultado"></p>
+          <br />
+          <br />
+          <br />
+          <button onclick="baixarComprovativo()" class="btn-pdf">Baixar Comprovativo de Inscrição
+          </button>
+        </div>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+    </body>
+  </html>

@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+  <html lang="pt-PT">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Site de Inscrições - IPIKK</title>
+      <link rel="shortcut icon"href="Ícone do IPIKK~3.jpg"type="image/x-jpg"/>
+      <script src="Inscrição.js"></script>
+      <style type="text/css">
+        body
+        {
+          background: black;
+          padding:20px;
+          padding-bottom:20px;
+          padding-top:20px;
+        }
+        header
+        {
+          background: white;
+          padding:20px;
+          text-align:center;
+          padding-top:20px;
+          padding-bottom:10px;
+          width:1250px;
+          height:700px;
+        }
+        header>h1,h2
+        {
+          color: black;
+          font-family:'Times New Roman',Times, serif;
+          padding-top:20px;
+          padding-bottom:10px;
+          
+        }
+        body>h2
+        {
+          color: white;
+          font-family:'Times New Roman', Times, serif;
+        }
+        body>h1
+        {
+          color: white;
+          text-align:center;
+        }
+        p
+        {
+          color:white;
+          text-align:center;
+          font-family:'Times New Roman', Times, serif;
+        }
+        ul
+        {
+          color:white;
+          font-family:'Times New Roman',Times, serif;
+        }
+        a:hover
+        {
+          background-color:gray;
+        }
+        div>footer
+        {
+          width:1250px;
+          height:910px;
+          background: white;
+          padding:10px;
+          padding-top:10px;
+          padding-bottom:10px;
+        }
+        div>footer>ul>a
+        {
+          padding:10px;
+          padding-top:10px;
+          padding-bottom:10px;
+          color:blue;
+        }
+        div>footer>ul>h2
+        {
+          color: black;
+          text-align:left;
+          padding:10px;
+          padding-bottom:10px;
+        }
+        div>footer>ul>a>img
+        {
+          width:70px;
+          height:70px;
+          padding:10px;
+          padding-bottom:10px;
+          padding-top:10px;
+        }
+        *
+        {
+          margin: 0; padding: 0; box-sizing: border-box;
+        }
+
+        body
+          {
+            color:black; padding: 20px;
+          }
+        
+        #msg, #resultado
+        {
+          margin-top: 15px; text-align: center; font-weight: bold; color: #006400;
+          
+        }
+        
+        #formInscricao
+        {
+          width:1260px;
+          height: 910px;
+          margin: 40px auto;
+          background: #ffffff;
+          padding: 40px;
+          border-radius: 10px;
+          box-shadow: 0px 5px 15px rgba(0,0,0,0.2);
+          font-family: Arial, Helvetica, sans-serif;
+        }
+        
+        #formInscricao h3{
+        
+        margin-bottom: 20px;
+        
+        color: #006400;
+        
+        border-bottom: 2px solid #006400;
+        
+        padding-bottom: 5px;
+        
+        }
+        #formInscricao input,
+        #formInscricao select
+        {
+          width:100%;
+          padding:12px;
+          margin-top: 8px;
+          margin-bottom: 15px;
+          border: 1px solid #ccc;
+          border-radius: 6px;
+          font-size: 15px;
+          transition: 0.3s;
+        
+        }
+        /* EFEITO AO CLICAR */
+        
+        #formInscricao input:focus,
+        #formInscricao select:focus
+        {
+          border-color: #006400;
+          outline: none;
+          box-shadow: 0px 0px 5px rgba(0,100,0,0.4);
+        
+        }
+        
+        
+        /* LABEL */
+        
+        #formInscricao label{
+        
+        font-weight: bold;
+        
+        color: #333;
+        
+        }
+        
+        
+        /* BOTÃO */
+        
+        #formInscricao button{
+        
+        width: 100%;
+        
+        padding: 14px;
+        
+        background: #006400;
+        
+        color: white;
+        
+        border: none;
+        
+        border-radius: 6px;
+        
+        font-size: 16px;
+        
+        font-weight: bold;
+        
+        cursor: pointer;
+        
+        transition: 0.3s;
+        
+        }
+        
+        
+        /* HOVER DO BOTÃO */
+        
+        #formInscricao button:hover{
+        
+        background: #004d00;
+        
+        transform: scale(1.02);
+        
+        }
+        
+        
+        /* MENSAGEM */
+        
+        #msg{
+        
+        margin-top: 20px;
+        
+        text-align: center;
+        
+        font-weight: bold;
+        
+        font-size: 16px;
+        
+        }
+        
+        
+        /* RESPONSIVO (CELULAR) */
+        
+        @media(max-width:600px){
+        
+        #formInscricao{
+        
+        padding: 20px;
+        
+        }
+        
+        }
+        #msg
+        {
+          width:100%;
+          max-width: 500px;
+          margin: 20px auto;
+          padding: 12px;
+          text-align: center;
+          font-size: 16px;
+          font-weight: bold;
+          border-radius: 6px;
+          display: none;
+
+        }
+
+        #msg.sucesso
+        {
+          background-color: #d4edda;
+          color: #155724;
+          border: 1px solid #c3e6cb;
+          display: block;
+        }
+        #msg.erro
+        {
+          background-color: white;
+          color:red;
+          border: 1px solid white;
+          display: block;
+        }
+      </style>
+    </head>
+    <body>
+      <header>
+        <img src="Ícone do IPIKK~3.jpg">
+        <h1><center>Site de Inscrições</center></h1>
+        <h1><center>Instituto Politécnico Industrial do Kilamba-Kiaxi "Nova Vida" N° 8056</center></h1>
+         <h2><center>Lema : Um diferencial para a sua formação</center>
+        </h2>
+        <br />
+        <br />
+      </header>
+      <br />
+      <h1>Local de Inscrição de Candidaturas – IPIKK</h1>
+      <form id="formInscricao"enctype="multipart/form-data">
+        <h3>Dados do Candidato</h3>
+        <input type="text" name="nome" placeholder="Nome completo" required>
+        <input type="date" name="nascimento" required>
+        <input type="text" name="bi" placeholder="Nº do BI" required>
+        <select name="curso" required>
+        <option value="">Curso</option>
+        <option>Informática</option>
+        <option>Gestão de Sistemas Informáticos</option>
+        <option>Obras de Construção Civil</option>
+        <option>Desenhador Projectista</option>
+        <option>Energia e Instalações Elétricas</option>
+        <option>Tecnologia de Moveis</option>
+        <option>Frio e Climatização</option>
+        </select>
+        <select name="classe" required>
+        <option>10ª Classe</option>
+        </select>
+        <h3>Documentos</h3>
+        <br/>
+        <label>BI (PDF ou imagem)</label>
+        <input type="file"name="doc_bi"accept=".pdf,image/*"required>
+        <label>Certificado original</label>
+        <input type="file"name="certificado"accept=".pdf,image/*" required>
+        <button type="submit">Enviar Inscrição</button>
+      </form>
+      <p id="msg"></p>
+      
+      <br/>
+      <div>
+        <footer>
+          <center><img src="Ícone do IPIKK~3.jpg"width="160"height="160">
+          </center>
+          <h2><center>Instituto Politécnico Industrial do Kilamba-Kiaxi "Nova Vida" N° 8056</center>
+          </h2>
+          <br/>
+          <ul>
+            <h2>Página principal</h2>
+            <br />
+            <a href="Site principal.html">Página principal
+            </a>
+            <br />
+            <h2>Consultar Candidatura</h2>
+            <br />
+            <a href="consulta.html">Consultar Candidatura</a>
+            <br />
+            <h2>Baixar os topicos do teste</h2>
+            <br />
+            <a href="Topicos.pdf">Baixar topicos do teste</a>
+            <br />
+            <h2>Acese ao Painel de Candidaturos</h2>
+            <br />
+            <a href="adimin.html">Painel de Candidaturas</a>
+          </ul>
+          <br />
+          <ul>
+            <h2>Redes Sociais</h2>
+            <a href="https://www.facebook.com/p/IPIKK-Instituto-Polit%25C3%25A9cnico-Industrial-do-Kilamba-Kiaxi-8056-Nova-Vida-100054197513743/%3Flocale%3Dpt_BR&ved=2ahUKEwi7g9-piIGTAxVhXUEAHaiJA8QQFnoECFIQAQ&usg=AOvVaw3WyrZ3KgOPmuB9Jlf_P-E9"><img src="Facebook.jpg"alt="Facebook Ipikk"/></a>
+            <a href="#"><img src="Instagram.jpg"alt=""/></a>
+            <a href="Email:geral@ipikk.ao"><img src="Gmail.jpg"/></a>
+            <a href="https://www.linkedin.com/company/ipikk-nv"><img src="LinkedIn.jpg" alt="" /></a>
+          </ul>
+          <ul/>
+        </footer>
+      </div>
+    </body>
+  </html>
